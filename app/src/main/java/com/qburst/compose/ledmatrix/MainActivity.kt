@@ -5,7 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.runtime.Composable
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -117,9 +119,26 @@ class MainActivity : ComponentActivity() {
         setContent {
             LEDMatrixDisplayTheme {
 
-                LedMatrixDisplay(
-                    number = 5
-                )
+                Column {
+
+                    var number by remember { mutableStateOf(0) }
+
+                    LedMatrixDisplay(
+                        number = number
+                    )
+
+                    repeat(10) {
+
+                        Button(
+                            onClick = { number = it },
+                            modifier = Modifier.padding(4.dp)
+                        ) {
+                            Text("$it")
+                        }
+
+
+                    }
+                }
 
             }
         }
