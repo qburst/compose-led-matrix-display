@@ -51,7 +51,10 @@ class MainActivity : ComponentActivity() {
                     )
 
                     LedCounterDisplay(
-                        style = ledStyle
+                        style = ledStyle,
+                        onReset = {
+                            ledStyle = LedMatrixStyle() // reset to the default style
+                        }
                     )
 
                     ThemePicker(
@@ -214,7 +217,8 @@ private fun ThemePicker(
 
 @Composable
 private fun LedCounterDisplay(
-    style: LedMatrixStyle = LedMatrixStyle()
+    style: LedMatrixStyle = LedMatrixStyle(),
+    onReset: (() -> Unit)? = null // The `style` must be reset externally, otherwise it will cause unexpected behavior.
 ) {
 
     var number by remember { mutableStateOf(0) }
@@ -259,7 +263,7 @@ private fun LedCounterDisplay(
 
         Button(
             onClick = { started = !started },
-            modifier = Modifier.padding(8.dp)
+            modifier = Modifier.padding(end = 8.dp)
         ) {
             Text(
                 if (started) "Stop Counter" else "Start Counter"
@@ -268,10 +272,23 @@ private fun LedCounterDisplay(
 
         Button(
             onClick = { number = (0..999).random() },
-            modifier = Modifier.padding(8.dp)
+            modifier = Modifier.padding(end = 8.dp)
         ) {
             Text(
                 "Randomize"
+            )
+        }
+
+        Button(
+            onClick = {
+                started = false
+                number = 0
+                onReset?.invoke()
+            },
+            modifier = Modifier.padding(end = 8.dp)
+        ) {
+            Text(
+                "Reset"
             )
         }
     }
