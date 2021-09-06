@@ -90,7 +90,7 @@ private fun ThemePicker(
         Color.Black,
         Color.DarkGray,
         Color.Gray,
-        Color.LightGray,
+        Color(0xFFEEEEEE), // Lighter than Color.LightGray
         Color.White,
         Color.Red,
         Color.Green,
