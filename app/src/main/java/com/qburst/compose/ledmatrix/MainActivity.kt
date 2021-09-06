@@ -3,11 +3,11 @@ package com.qburst.compose.ledmatrix
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.qburst.compose.ledmatrix.ui.theme.LEDMatrixDisplayTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,24 +15,31 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LEDMatrixDisplayTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+
+                Column {
+
+                    repeat(7) {
+
+                        Row {
+
+                            repeat(5) {
+
+                                Box(
+                                    modifier = Modifier
+                                        .padding(1.dp)
+                                        .width(10.dp)
+                                        .height(10.dp)
+                                        .background(color = Color.Gray)
+
+                                )
+                            }
+
+                        }
+
+                    }
                 }
+
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    LEDMatrixDisplayTheme {
-        Greeting("Android")
     }
 }
