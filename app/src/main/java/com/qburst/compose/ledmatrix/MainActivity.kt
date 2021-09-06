@@ -245,11 +245,11 @@ private fun LedCounterDisplay(
 
         LedMatrixDisplay(number = number.div(100), style = style)
 
-        Spacer(modifier = Modifier.width(8.dp))
+        Spacer(modifier = Modifier.width(16.dp))
 
         LedMatrixDisplay(number = number.mod(100).div(10), style = style)
 
-        Spacer(modifier = Modifier.width(8.dp))
+        Spacer(modifier = Modifier.width(16.dp))
 
         LedMatrixDisplay(number = number % 10, style = style)
     }
