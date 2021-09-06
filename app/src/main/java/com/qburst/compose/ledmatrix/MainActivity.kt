@@ -283,6 +283,7 @@ private fun ClockDisplay() {
         ledShape = LedShape.Round,
         ledWidth = 5.dp,
         ledHeight = 5.dp,
+        ledSpacing = 0.dp,
         onColor = Color.Black,
         offColor = Color(android.graphics.Color.parseColor("#EDEDED"))
     )
