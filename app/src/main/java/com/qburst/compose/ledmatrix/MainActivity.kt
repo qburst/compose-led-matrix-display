@@ -52,6 +52,14 @@ class MainActivity : ComponentActivity() {
 
                     Divider(modifier = Modifier.padding(vertical = 32.dp))
 
+                    Text(
+                        "Example usage",
+                        modifier = Modifier.padding(bottom = 16.dp),
+                        style = TextStyle(
+                            color = Color.DarkGray,
+                            fontSize = 18.sp
+                        )
+                    )
                     ClockDisplay()
 
                 }
@@ -244,7 +252,7 @@ private fun LedCounterDisplay(
             modifier = Modifier.padding(8.dp)
         ) {
             Text(
-                if (started) "Stop" else "Start"
+                if (started) "Stop Counter" else "Start Counter"
             )
         }
 
