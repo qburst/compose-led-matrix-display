@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -16,30 +17,37 @@ class MainActivity : ComponentActivity() {
         setContent {
             LEDMatrixDisplayTheme {
 
-                Column {
-
-                    repeat(7) {
-
-                        Row {
-
-                            repeat(5) {
-
-                                Box(
-                                    modifier = Modifier
-                                        .padding(1.dp)
-                                        .width(10.dp)
-                                        .height(10.dp)
-                                        .background(color = Color.Gray)
-
-                                )
-                            }
-
-                        }
-
-                    }
-                }
+                LedMatrixDisplay()
 
             }
         }
     }
+}
+
+@Composable
+fun LedMatrixDisplay() {
+
+    Column {
+
+        repeat(7) {
+
+            Row {
+
+                repeat(5) {
+
+                    Box(
+                        modifier = Modifier
+                            .padding(1.dp)
+                            .width(10.dp)
+                            .height(10.dp)
+                            .background(color = Color.Gray)
+
+                    )
+                }
+
+            }
+
+        }
+    }
+
 }
