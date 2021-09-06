@@ -13,98 +13,91 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.qburst.compose.ledmatrix.ui.theme.LEDMatrixDisplayTheme
 
-val number00 = listOf(
-    listOf(0, 1, 1, 1, 0),
+val ribbon = listOf(
+
+    // 0
+    listOf(0, 1, 1, 1, 0), // index = 0
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 1, 1),
     listOf(1, 0, 1, 0, 1),
     listOf(1, 1, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
-)
 
-val number01 = listOf(
-    listOf(0, 0, 1, 0, 0),
+    // 1
+    listOf(0, 0, 1, 0, 0), // index = 7
     listOf(0, 1, 1, 0, 0),
     listOf(0, 0, 1, 0, 0),
     listOf(0, 0, 1, 0, 0),
     listOf(0, 0, 1, 0, 0),
     listOf(0, 0, 1, 0, 0),
     listOf(0, 1, 1, 1, 0),
-)
 
-val number02 = listOf(
-    listOf(0, 1, 1, 1, 0),
+    // 2
+    listOf(0, 1, 1, 1, 0),  // index = 14
     listOf(1, 0, 0, 0, 1),
     listOf(0, 0, 0, 0, 1),
     listOf(0, 0, 0, 1, 0),
     listOf(0, 0, 1, 0, 0),
     listOf(0, 1, 0, 0, 0),
     listOf(1, 1, 1, 1, 1),
-)
 
-val number03 = listOf(
-    listOf(0, 1, 1, 1, 0),
+    // 3
+    listOf(0, 1, 1, 1, 0), // index = 21
     listOf(1, 0, 0, 0, 1),
     listOf(0, 0, 0, 0, 1),
     listOf(0, 0, 1, 1, 0),
     listOf(0, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
-)
 
-val number04 = listOf(
-    listOf(0, 0, 0, 1, 0),
+    // 4
+    listOf(0, 0, 0, 1, 0),  // index = 28
     listOf(0, 0, 1, 1, 0),
     listOf(0, 1, 0, 1, 0),
     listOf(1, 0, 0, 1, 0),
     listOf(1, 1, 1, 1, 1),
     listOf(0, 0, 0, 1, 0),
     listOf(0, 0, 0, 1, 0),
-)
 
-val number05 = listOf(
-    listOf(1, 1, 1, 1, 1),
+    // 5
+    listOf(1, 1, 1, 1, 1), // index = 35
     listOf(1, 0, 0, 0, 0),
     listOf(1, 1, 1, 1, 0),
     listOf(0, 0, 0, 0, 1),
     listOf(0, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
-)
 
-val number06 = listOf(
-    listOf(0, 1, 1, 1, 0),
+    // 6
+    listOf(0, 1, 1, 1, 0), // index = 42
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 0),
     listOf(1, 1, 1, 1, 0),
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
-)
 
-val number07 = listOf(
-    listOf(1, 1, 1, 1, 1),
+    // 7
+    listOf(1, 1, 1, 1, 1), // index = 49
     listOf(0, 0, 0, 0, 1),
     listOf(0, 0, 0, 1, 0),
     listOf(0, 0, 1, 0, 0),
     listOf(0, 1, 0, 0, 0),
     listOf(0, 1, 0, 0, 0),
     listOf(0, 1, 0, 0, 0),
-)
 
-val number08 = listOf(
-    listOf(0, 1, 1, 1, 0),
+    // 8
+    listOf(0, 1, 1, 1, 0), // index = 56
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
-)
 
-val number09 = listOf(
-    listOf(0, 1, 1, 1, 0),
+    // 9
+    listOf(0, 1, 1, 1, 0), // index = 63
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 1),
@@ -150,18 +143,9 @@ fun LedMatrixDisplay(
     number: Int = 0
 ) {
 
-    val character = when(number){
-        0 -> number00
-        1 -> number01
-        2 -> number02
-        3 -> number03
-        4 -> number04
-        5 -> number05
-        6 -> number06
-        7 -> number07
-        8 -> number08
-        9 -> number09
-        else -> number00
+    val characterRow = when(number){
+        in 0..9 -> number * 7
+        else -> 0
     }
 
     Column {
@@ -178,7 +162,7 @@ fun LedMatrixDisplay(
                             .width(10.dp)
                             .height(10.dp)
                             .background(
-                                color = if( character[row][column] == 1 ) Color.Red else Color.LightGray
+                                color = if( ribbon[characterRow + row][column] == 1 ) Color.Red else Color.LightGray
                             )
 
                     )
