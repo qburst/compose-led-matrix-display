@@ -133,7 +133,7 @@ data class LedMatrixStyle(
     val ledShape: LedShape = LedShape.Rectangle,
     val ledWidth: Dp = 15.dp,
     val ledHeight: Dp = 15.dp,
-    val ledSpacing: Dp = 1.dp,
+    val ledSpacing: Dp = 0.5.dp,
     val onColor: Color = Color(0xFFE87300), // Amber color, usual LED Matrix Displays
     val offColor: Color = Color(0xFFEEEEEE), // Light grey
 )
