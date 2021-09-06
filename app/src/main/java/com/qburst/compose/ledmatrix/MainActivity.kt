@@ -40,6 +40,16 @@ class MainActivity : ComponentActivity() {
 
                     var ledStyle by remember { mutableStateOf(LedMatrixStyle()) } // initialize with the default style
 
+
+                    Text(
+                        "LED Matrix Display in Compose",
+                        modifier = Modifier.padding(bottom = 32.dp),
+                        style = TextStyle(
+                            color = Color.Gray,
+                            fontSize = 20.sp
+                        )
+                    )
+
                     LedCounterDisplay(
                         style = ledStyle
                     )
@@ -93,7 +103,7 @@ private fun ThemePicker(
     // TODO: Place the color pickers in a better layout like `LazyVerticalGrid` later
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(top = 16.dp)
+        modifier = Modifier.padding(top = 32.dp)
     ) {
 
         Text(
@@ -285,7 +295,7 @@ private fun ClockDisplay() {
         ledHeight = 5.dp,
         ledSpacing = 0.dp,
         onColor = Color.Black,
-        offColor = Color(android.graphics.Color.parseColor("#EDEDED"))
+        offColor = Color(0xFFEDEDED)
     )
 
     Row(

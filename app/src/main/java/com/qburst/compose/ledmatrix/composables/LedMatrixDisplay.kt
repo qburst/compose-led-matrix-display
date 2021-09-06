@@ -124,8 +124,6 @@ private val ribbon = listOf(
     listOf(0, 1, 1, 1, 0),
 )
 
-private fun String.parseColor() = android.graphics.Color.parseColor(this)
-
 sealed class LedShape {
     object Round : LedShape()
     object Rectangle : LedShape()
@@ -136,8 +134,8 @@ data class LedMatrixStyle(
     val ledWidth: Dp = 15.dp,
     val ledHeight: Dp = 15.dp,
     val ledSpacing: Dp = 1.dp,
-    val onColor: Color = Color("#FF7E00".parseColor()), // Amber color, usual LED Matrix Displays
-    val offColor: Color = Color("#EEEEEE".parseColor()), // Light grey
+    val onColor: Color = Color(0xFFE87300), // Amber color, usual LED Matrix Displays
+    val offColor: Color = Color(0xFFEEEEEE), // Light grey
 )
 
 @Composable
