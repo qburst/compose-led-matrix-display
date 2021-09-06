@@ -27,8 +27,10 @@ val ribbon = listOf(
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
 
+    listOf(0, 0, 0, 0, 0), // Spacer
+
     // 1
-    listOf(0, 0, 1, 0, 0), // index = 7
+    listOf(0, 0, 1, 0, 0), // index = 8
     listOf(0, 1, 1, 0, 0),
     listOf(0, 0, 1, 0, 0),
     listOf(0, 0, 1, 0, 0),
@@ -36,8 +38,10 @@ val ribbon = listOf(
     listOf(0, 0, 1, 0, 0),
     listOf(0, 1, 1, 1, 0),
 
+    listOf(0, 0, 0, 0, 0), // Spacer
+
     // 2
-    listOf(0, 1, 1, 1, 0),  // index = 14
+    listOf(0, 1, 1, 1, 0),  // index = 16
     listOf(1, 0, 0, 0, 1),
     listOf(0, 0, 0, 0, 1),
     listOf(0, 0, 0, 1, 0),
@@ -45,8 +49,10 @@ val ribbon = listOf(
     listOf(0, 1, 0, 0, 0),
     listOf(1, 1, 1, 1, 1),
 
+    listOf(0, 0, 0, 0, 0), // Spacer
+
     // 3
-    listOf(0, 1, 1, 1, 0), // index = 21
+    listOf(0, 1, 1, 1, 0), // index = 24
     listOf(1, 0, 0, 0, 1),
     listOf(0, 0, 0, 0, 1),
     listOf(0, 0, 1, 1, 0),
@@ -54,8 +60,10 @@ val ribbon = listOf(
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
 
+    listOf(0, 0, 0, 0, 0), // Spacer
+
     // 4
-    listOf(0, 0, 0, 1, 0),  // index = 28
+    listOf(0, 0, 0, 1, 0),  // index = 32
     listOf(0, 0, 1, 1, 0),
     listOf(0, 1, 0, 1, 0),
     listOf(1, 0, 0, 1, 0),
@@ -63,17 +71,21 @@ val ribbon = listOf(
     listOf(0, 0, 0, 1, 0),
     listOf(0, 0, 0, 1, 0),
 
+    listOf(0, 0, 0, 0, 0), // Spacer
+
     // 5
-    listOf(1, 1, 1, 1, 1), // index = 35
+    listOf(1, 1, 1, 1, 1), // index = 40
     listOf(1, 0, 0, 0, 0),
     listOf(1, 1, 1, 1, 0),
     listOf(0, 0, 0, 0, 1),
     listOf(0, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
+
+    listOf(0, 0, 0, 0, 0), // Spacer
 
     // 6
-    listOf(0, 1, 1, 1, 0), // index = 42
+    listOf(0, 1, 1, 1, 0), // index = 48
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 0),
     listOf(1, 1, 1, 1, 0),
@@ -81,8 +93,10 @@ val ribbon = listOf(
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
 
+    listOf(0, 0, 0, 0, 0), // Spacer
+
     // 7
-    listOf(1, 1, 1, 1, 1), // index = 49
+    listOf(1, 1, 1, 1, 1), // index = 56
     listOf(0, 0, 0, 0, 1),
     listOf(0, 0, 0, 1, 0),
     listOf(0, 0, 1, 0, 0),
@@ -90,8 +104,10 @@ val ribbon = listOf(
     listOf(0, 1, 0, 0, 0),
     listOf(0, 1, 0, 0, 0),
 
+    listOf(0, 0, 0, 0, 0), // Spacer
+
     // 8
-    listOf(0, 1, 1, 1, 0), // index = 56
+    listOf(0, 1, 1, 1, 0), // index = 64
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
@@ -99,8 +115,10 @@ val ribbon = listOf(
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 0),
 
+    listOf(0, 0, 0, 0, 0), // Spacer
+
     // 9
-    listOf(0, 1, 1, 1, 0), // index = 63
+    listOf(0, 1, 1, 1, 0), // index = 72
     listOf(1, 0, 0, 0, 1),
     listOf(1, 0, 0, 0, 1),
     listOf(0, 1, 1, 1, 1),
@@ -147,7 +165,7 @@ fun LedMatrixDisplay(
 ) {
 
     val characterRow = when (number) {
-        in 0..9 -> number * 7
+        in 0..9 -> number * 8
         else -> 0
     }
 
