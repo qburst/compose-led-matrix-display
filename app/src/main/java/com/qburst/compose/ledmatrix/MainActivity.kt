@@ -21,6 +21,96 @@ val number00 = listOf(
     listOf(0, 1, 1, 1, 0),
 )
 
+val number01 = listOf(
+    listOf(0, 0, 1, 0, 0),
+    listOf(0, 1, 1, 0, 0),
+    listOf(0, 0, 1, 0, 0),
+    listOf(0, 0, 1, 0, 0),
+    listOf(0, 0, 1, 0, 0),
+    listOf(0, 0, 1, 0, 0),
+    listOf(0, 1, 1, 1, 0),
+)
+
+val number02 = listOf(
+    listOf(0, 1, 1, 1, 0),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 0, 0, 0, 1),
+    listOf(0, 0, 0, 1, 0),
+    listOf(0, 0, 1, 0, 0),
+    listOf(0, 1, 0, 0, 0),
+    listOf(1, 1, 1, 1, 1),
+)
+
+val number03 = listOf(
+    listOf(0, 1, 1, 1, 0),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 0, 0, 0, 1),
+    listOf(0, 0, 1, 1, 0),
+    listOf(0, 0, 0, 0, 1),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 1, 1, 1, 0),
+)
+
+val number04 = listOf(
+    listOf(0, 0, 0, 1, 0),
+    listOf(0, 0, 1, 1, 0),
+    listOf(0, 1, 0, 1, 0),
+    listOf(1, 0, 0, 1, 0),
+    listOf(1, 1, 1, 1, 1),
+    listOf(0, 0, 0, 1, 0),
+    listOf(0, 0, 0, 1, 0),
+)
+
+val number05 = listOf(
+    listOf(1, 1, 1, 1, 1),
+    listOf(1, 0, 0, 0, 0),
+    listOf(1, 1, 1, 1, 0),
+    listOf(0, 0, 0, 0, 1),
+    listOf(0, 0, 0, 0, 1),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 1, 1, 1, 0),
+)
+
+val number06 = listOf(
+    listOf(0, 1, 1, 1, 0),
+    listOf(1, 0, 0, 0, 1),
+    listOf(1, 0, 0, 0, 0),
+    listOf(1, 1, 1, 1, 0),
+    listOf(1, 0, 0, 0, 1),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 1, 1, 1, 0),
+)
+
+val number07 = listOf(
+    listOf(1, 1, 1, 1, 1),
+    listOf(0, 0, 0, 0, 1),
+    listOf(0, 0, 0, 1, 0),
+    listOf(0, 0, 1, 0, 0),
+    listOf(0, 1, 0, 0, 0),
+    listOf(0, 1, 0, 0, 0),
+    listOf(0, 1, 0, 0, 0),
+)
+
+val number08 = listOf(
+    listOf(0, 1, 1, 1, 0),
+    listOf(1, 0, 0, 0, 1),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 1, 1, 1, 0),
+    listOf(1, 0, 0, 0, 1),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 1, 1, 1, 0),
+)
+
+val number09 = listOf(
+    listOf(0, 1, 1, 1, 0),
+    listOf(1, 0, 0, 0, 1),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 1, 1, 1, 1),
+    listOf(0, 0, 0, 0, 1),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 1, 1, 1, 0),
+)
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +118,7 @@ class MainActivity : ComponentActivity() {
             LEDMatrixDisplayTheme {
 
                 LedMatrixDisplay(
-                    number = 0
+                    number = 5
                 )
 
             }
@@ -43,6 +133,15 @@ fun LedMatrixDisplay(
 
     val character = when(number){
         0 -> number00
+        1 -> number01
+        2 -> number02
+        3 -> number03
+        4 -> number04
+        5 -> number05
+        6 -> number06
+        7 -> number07
+        8 -> number08
+        9 -> number09
         else -> number00
     }
 
