@@ -11,6 +11,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.qburst.compose.ledmatrix.ui.theme.LEDMatrixDisplayTheme
 
+val number00 = listOf(
+    listOf(0, 1, 1, 1, 0),
+    listOf(1, 0, 0, 0, 1),
+    listOf(1, 0, 0, 1, 1),
+    listOf(1, 0, 1, 0, 1),
+    listOf(1, 1, 0, 0, 1),
+    listOf(1, 0, 0, 0, 1),
+    listOf(0, 1, 1, 1, 0),
+)
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
