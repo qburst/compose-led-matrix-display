@@ -79,29 +79,37 @@ private fun LedCounterDisplay() {
         LedMatrixDisplay(number = number % 10)
     }
 
-    Button(
-        onClick = { started = !started },
-        modifier = Modifier.padding(8.dp)
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 8.dp),
+        horizontalArrangement = Arrangement.Center
     ) {
-        Text(
-            if (started) "Stop" else "Start"
-        )
-    }
 
-    Button(
-        onClick = { number = (0..999).random() },
-        modifier = Modifier.padding(8.dp)
-    ) {
-        Text(
-            "Randomize"
-        )
+        Button(
+            onClick = { started = !started },
+            modifier = Modifier.padding(8.dp)
+        ) {
+            Text(
+                if (started) "Stop" else "Start"
+            )
+        }
+
+        Button(
+            onClick = { number = (0..999).random() },
+            modifier = Modifier.padding(8.dp)
+        ) {
+            Text(
+                "Randomize"
+            )
+        }
     }
 }
 
 @Composable
 private fun ClockDisplay() {
 
-    var time by remember { mutableStateOf( Time.getLatest() ) }
+    var time by remember { mutableStateOf(Time.getLatest()) }
 
     LaunchedEffect(true) {
         while (true) {
@@ -124,21 +132,21 @@ private fun ClockDisplay() {
     ) {
 
         // Hour
-        LedMatrixDisplay(number =  time.hour / 10, style = style)
+        LedMatrixDisplay(number = time.hour / 10, style = style)
         Spacer(modifier = Modifier.width(4.dp))
-        LedMatrixDisplay(number =  time.hour % 10, style = style)
+        LedMatrixDisplay(number = time.hour % 10, style = style)
         Spacer(modifier = Modifier.width(16.dp))
 
         // Minutes
-        LedMatrixDisplay(number =  time.minutes / 10, style = style)
+        LedMatrixDisplay(number = time.minutes / 10, style = style)
         Spacer(modifier = Modifier.width(4.dp))
-        LedMatrixDisplay(number =  time.minutes % 10, style = style)
+        LedMatrixDisplay(number = time.minutes % 10, style = style)
         Spacer(modifier = Modifier.width(16.dp))
 
         // Seconds
-        LedMatrixDisplay(number =  time.seconds / 10, style = style)
+        LedMatrixDisplay(number = time.seconds / 10, style = style)
         Spacer(modifier = Modifier.width(4.dp))
-        LedMatrixDisplay(number =  time.seconds % 10, style = style)
+        LedMatrixDisplay(number = time.seconds % 10, style = style)
 
     }
 
