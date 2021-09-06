@@ -27,7 +27,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             LEDMatrixDisplayTheme {
 
-                LedMatrixDisplay()
+                LedMatrixDisplay(
+                    number = 0
+                )
 
             }
         }
@@ -35,22 +37,31 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun LedMatrixDisplay() {
+fun LedMatrixDisplay(
+    number: Int = 0
+) {
+
+    val character = when(number){
+        0 -> number00
+        else -> number00
+    }
 
     Column {
 
-        repeat(7) {
+        repeat(7) { row ->
 
             Row {
 
-                repeat(5) {
+                repeat(5) { column ->
 
                     Box(
                         modifier = Modifier
                             .padding(1.dp)
                             .width(10.dp)
                             .height(10.dp)
-                            .background(color = Color.Gray)
+                            .background(
+                                color = if( character[row][column] == 1 ) Color.Red else Color.LightGray
+                            )
 
                     )
                 }
