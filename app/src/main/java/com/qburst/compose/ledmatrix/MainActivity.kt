@@ -19,10 +19,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.qburst.compose.ledmatrix.composables.ClockDisplay
 import com.qburst.compose.ledmatrix.composables.LedMatrixDisplay
 import com.qburst.compose.ledmatrix.composables.LedMatrixStyle
 import com.qburst.compose.ledmatrix.composables.LedShape
-import com.qburst.compose.ledmatrix.data.Time
 import com.qburst.compose.ledmatrix.ui.theme.LEDMatrixDisplayTheme
 import kotlinx.coroutines.delay
 
@@ -73,6 +73,7 @@ class MainActivity : ComponentActivity() {
                             fontSize = 18.sp
                         )
                     )
+
                     ClockDisplay()
 
                 }
@@ -294,49 +295,4 @@ private fun LedCounterDisplay(
     }
 }
 
-@Composable
-private fun ClockDisplay() {
 
-    var time by remember { mutableStateOf(Time.getLatest()) }
-
-    LaunchedEffect(true) {
-        while (true) {
-            time = Time.getLatest()
-            delay(1000)
-        }
-    }
-
-    val style = LedMatrixStyle(
-        ledShape = LedShape.Round,
-        ledWidth = 5.dp,
-        ledHeight = 5.dp,
-        ledSpacing = 0.dp,
-        onColor = Color.Black,
-        offColor = Color(0xFFEDEDED)
-    )
-
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.Center
-    ) {
-
-        // Hour
-        LedMatrixDisplay(number = time.hour / 10, style = style)
-        Spacer(modifier = Modifier.width(4.dp))
-        LedMatrixDisplay(number = time.hour % 10, style = style)
-        Spacer(modifier = Modifier.width(16.dp))
-
-        // Minutes
-        LedMatrixDisplay(number = time.minutes / 10, style = style)
-        Spacer(modifier = Modifier.width(4.dp))
-        LedMatrixDisplay(number = time.minutes % 10, style = style)
-        Spacer(modifier = Modifier.width(16.dp))
-
-        // Seconds
-        LedMatrixDisplay(number = time.seconds / 10, style = style)
-        Spacer(modifier = Modifier.width(4.dp))
-        LedMatrixDisplay(number = time.seconds % 10, style = style)
-
-    }
-
-}
