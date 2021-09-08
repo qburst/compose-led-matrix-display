@@ -7,3 +7,8 @@ This repository covers the following features of Compose:
   - Basic animations using `animate*AsState()`
   - Using states and updating components
   - Basic side effects - `LaunchedEffect`
+
+## Preview
+
+https://user-images.githubusercontent.com/22439665/132482950-793c8ef4-8d58-410b-8b1b-6fe79c5b4d47.mp4
+
