@@ -2,11 +2,13 @@
 
 A configurable LED dot matrix display using Jetpack Compose. This uses a 7x5 matrix of `Box`es to build the component.
 
+Please refer to [this blog post](https://blog.qburst.com/2021/09/building-an-animated-led-matrix-display-in-jetpack-compose/) for a step-by-step tutorial on how to build this LED Matrix composable in Jetpack Compose, how to add animations, and two example usages.
+
 This repository covers the following features of Compose:
 
-  - Basic animations using `animate*AsState()`
-  - Using states and updating components
-  - Basic side effects - `LaunchedEffect`
+  - Using states.
+  - Basic animations using `animateIntAsState()`.
+  - Basic side effects - `LaunchedEffect`.
 
 ## Preview
 
